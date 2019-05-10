@@ -2,7 +2,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false,index: true|
 |email|string|null: false|
 
 ### Association
@@ -15,8 +15,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
@@ -26,7 +26,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false,index: true|
 
 ### Association
 - has_many :members
@@ -37,13 +37,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|boby|text|null: false, foreign_key: true|
-|image|string|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|body|text|index: true|
+|image|string|index: true|
+|group_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :group
-### Index
-- add_index :messages, :group_id
