@@ -26,7 +26,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false,index: true|
+|name|string|null: false|
 
 ### Association
 - has_many :members
@@ -37,8 +37,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|index: true|
-|image|string|index: true|
+|body|text|-------|
+|image|string|-------|
 |group_id|references|null: false, foreign_key: true|
 |user_id|references|null: false, foreign_key: true|
 
