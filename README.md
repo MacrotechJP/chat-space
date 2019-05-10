@@ -3,7 +3,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false,index: true|
-|email|string|null: false|
 
 ### Association
 - has_many :members
