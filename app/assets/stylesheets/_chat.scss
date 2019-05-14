@@ -4,31 +4,31 @@
   float:left;
   margin-bottom: 0;
 
-  .chat_top{
+  &_top{
     height:100px;
     border-bottom: thin solid #eeeeee;
 
-    .chat_top_center{
+    &_center{
       height: 100%;
       margin:0 40px;
 
-      .chat_top_center-info{
+      &-info{
         float:left;
 
-        .chat_top_center-info-name{
+        &-name{
           font-size:20px;
           color:#333333;
           margin:0;
           padding-top:35px;
           padding-bottom:15px;
         }
-        .chat_top_center-info-member{
+        &-member{
           ont-size:12px;
           color:#999999;
           margin:0;
         }
       }
-      .chat_top_center-edit{
+      &-edit{
         height:40px;
         float:right;
         margin-top:28px;
@@ -44,22 +44,22 @@
     }
     
   } 
-  .chat_main{
+  &_main{
     height:calc(100% - 190px);
     background-color: #fafafa;
 
-    .chat_main_center{
+    &_center{
       height:calc(100% - 46px);
       padding:0 40px;
       padding-top:46px;
 
-      .chat_main_center-message{
+      &-message{
 
-        .chat_main_center-messageTop{
+        &-top{
           height:26px;
           
 
-          .chat_main_center-messageTop-user{
+          &-user{
             margin:0;
             font-size:16px;
             font-weight: bold;
@@ -68,14 +68,14 @@
             margin-right: 10px;
             
           }
-          .chat_main_center-messageTop-date{
+          &-date{
             margin:0;
             font-size:12px;
             color:#999999;
             float:left;
           }
         }
-        .chat_main_center-message-detail{
+        &-detail{
           margin:0;
           font-size:14px;
           color:#434A54;
@@ -84,12 +84,12 @@
       }
     }
   }
-  .chat_send{
+  &_send{
     height:90px;
     background-color: rgb(221,221,221);
     position: relative;
 
-    .chat_send_center{
+    &_center{
       padding:20px 40px;
 
       input{
@@ -117,10 +117,10 @@
           content: "\f03e";
         }
       }
-      .chat_send_center-icon-file{
+      &-icon-file{
         display:none;
       }
-      .chat_send_center-botom{
+      &-botom{
         height:50px;
         width:100px;
         background-color: #38AEF0;
