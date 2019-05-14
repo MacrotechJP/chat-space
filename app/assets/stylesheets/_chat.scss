@@ -2,6 +2,7 @@
   width:calc(100% - 300px);
   height:100%;
   float:left;
+  margin-bottom: 0;
 
   .chat_top{
     height:100px;
@@ -105,11 +106,19 @@
         color:#434A54;
         padding-left:10px;
       }
-      .chat_send_center-detail-icon{
+      i{
         position:absolute;
         top:33px;
         right:176px;
         color:black;
+        cursor: pointer;
+        
+        ::before{
+          content: "\f03e";
+        }
+      }
+      .chat_send_center-icon-file{
+        display:none;
       }
       .chat_send_center-botom{
         height:50px;

@@ -24,7 +24,9 @@
     %div.chat_send
       %div.chat_send_center
         %input{:class => "chat_send_center-detail",:type => "text",:placeholder => "type a message"} 
-        %a{:class => "chat_send_center-detail-icon",:href => ""}= fa_icon("image")
+        %label{:class => "chat_send_center-icon",:for => "message_image"}
+          %i.fa.fa-image
+          %input{:class => "chat_send_center-icon-file",:type => "file",:name => "message[image]",:id => "message_image"}
         %div.chat_send_center-botom
           %a{ :href => ''}
             Send
