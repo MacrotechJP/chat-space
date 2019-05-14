@@ -1,0 +1,30 @@
+%div.main
+  %div.sidebar
+    %div.sidebar_header
+      %div.sidebar_header_center
+        %p test_user
+        %div.sidebar_header_center-icon
+          %a{ :href => ''}= fa_icon("edit")
+          %a{ :href => ''}= fa_icon("cog")
+    %div.sidebar_main
+      %div.sidebar_main_center
+        = render :partial => "sidebar" 
+  %div.chat
+    %div.chat_top
+      %div.chat_top_center
+        %div.chat_top_center-info
+          %p.chat_top_center-info-name test_group
+          %p.chat_top_center-info-member Members : koyo
+        %div.chat_top_center-edit
+          %a{ :href => ''}
+            Edit
+    %div.chat_main
+      %div.chat_main_center
+        = render :partial => "chatMessage"
+    %div.chat_send
+      %div.chat_send_center
+        %input{:class => "chat_send_center-detail",:type => "text",:placeholder => "type a message"} 
+        %a{:class => "chat_send_center-detail-icon",:href => ""}= fa_icon("image")
+        %div.chat_send_center-botom
+          %a{ :href => ''}
+            Send

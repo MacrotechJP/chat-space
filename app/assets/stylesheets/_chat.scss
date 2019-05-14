@@ -1,0 +1,130 @@
+.chat{
+  width:calc(100% - 300px);
+  height:100%;
+  float:left;
+
+  .chat_top{
+    height:100px;
+    border-bottom: thin solid #eeeeee;
+
+    .chat_top_center{
+      height: 100%;
+      margin:0 40px;
+
+      .chat_top_center-info{
+        float:left;
+
+        .chat_top_center-info-name{
+          font-size:20px;
+          color:#333333;
+          margin:0;
+          padding-top:35px;
+          padding-bottom:15px;
+        }
+        .chat_top_center-info-member{
+          ont-size:12px;
+          color:#999999;
+          margin:0;
+        }
+      }
+      .chat_top_center-edit{
+        height:40px;
+        float:right;
+        margin-top:28px;
+        border:thin solid #38AEF0;
+        display:flex;
+
+        a{
+          color:#38AEF0;
+          text-decoration:none;
+          margin:auto 20px;
+        }
+      }
+    }
+    
+  } 
+  .chat_main{
+    height:calc(100% - 190px);
+    background-color: #fafafa;
+
+    .chat_main_center{
+      height:calc(100% - 46px);
+      padding:0 40px;
+      padding-top:46px;
+
+      .chat_main_center-message{
+
+        .chat_main_center-messageTop{
+          height:26px;
+          
+
+          .chat_main_center-messageTop-user{
+            margin:0;
+            font-size:16px;
+            font-weight: bold;
+            color: #434A54;
+            float:left;
+            margin-right: 10px;
+            
+          }
+          .chat_main_center-messageTop-date{
+            margin:0;
+            font-size:12px;
+            color:#999999;
+            float:left;
+          }
+        }
+        .chat_main_center-message-detail{
+          margin:0;
+          font-size:14px;
+          color:#434A54;
+          margin-bottom:40px;
+        }
+      }
+    }
+  }
+  .chat_send{
+    height:90px;
+    background-color: rgb(221,221,221);
+    position: relative;
+
+    .chat_send_center{
+      padding:20px 40px;
+
+      input{
+        height:50px;
+        width:calc(100% - 125px);
+        float:left;
+        margin-right:15px;
+        font-size:16px;
+        border:solid 0px;
+        
+      }
+      ::placeholder{
+        font-size:16px;
+        color:#434A54;
+        padding-left:10px;
+      }
+      .chat_send_center-detail-icon{
+        position:absolute;
+        top:33px;
+        right:176px;
+        color:black;
+      }
+      .chat_send_center-botom{
+        height:50px;
+        width:100px;
+        background-color: #38AEF0;
+        float:right;
+        display:flex;
+        
+
+        a{
+          color: white;
+          text-decoration:none;
+          margin:auto ;
+        }
+      }
+    }
+  } 
+}
