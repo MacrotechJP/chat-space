@@ -35,7 +35,7 @@
         border:thin solid #38AEF0;
         display:flex;
 
-        a{
+        &-boton{
           color:#38AEF0;
           text-decoration:none;
           margin:auto 20px;
@@ -128,7 +128,7 @@
         display:flex;
         
 
-        a{
+        &-detail{
           color: white;
           text-decoration:none;
           margin:auto ;
