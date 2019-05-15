@@ -4,8 +4,8 @@
       %div.sidebar_header_center
         %p test_user
         %div.sidebar_header_center-icon
-          %a{ :href => ''}= fa_icon("edit")
-          %a{ :href => ''}= fa_icon("cog")
+          %a{href:''}= fa_icon("edit")
+          %a{href:''}= fa_icon("cog")
     %div.sidebar_main
       %div.sidebar_main_center
         = render :partial => "sidebar" 
@@ -16,17 +16,17 @@
           %p.chat_top_center-info-name test_group
           %p.chat_top_center-info-member Members : koyo
         %div.chat_top_center-edit
-          %a{ :href => ''}
+          %a{href:''}
             Edit
     %div.chat_main
       %div.chat_main_center
         = render :partial => "chatMessage"
     %div.chat_send
       %div.chat_send_center
-        %input{:class => "chat_send_center-detail",:type => "text",:placeholder => "type a message"} 
-        %label{:class => "chat_send_center-icon",:for => "message_image"}
+        %input{class:"chat_send_center-detail",type:"text",placeholder:"type a message"} 
+        %label{class:"chat_send_center-icon",for:"message_image"}
           %i.fa.fa-image
-          %input{:class => "chat_send_center-icon-file",:type => "file",:name => "message[image]",:id => "message_image"}
+          %input{class:"chat_send_center-icon-file",type:"file",name:"message[image]",id:"message_image"}
         %div.chat_send_center-botom
-          %a{ :href => ''}
+          %a{href:''}
             Send
