@@ -16,7 +16,7 @@
           .chat_top_center-info-name test_group
           .chat_top_center-info-member Members : koyo
         .chat_top_center-edit
-          = link_to 'Edit',"",class: "chat_top_center-edit-boton"
+          = link_to 'Edit',"/users/sign_out",method: :delete,class: "chat_top_center-edit-boton"
     .chat_main
       .chat_main_center
         = render partial:"chatMessage"
