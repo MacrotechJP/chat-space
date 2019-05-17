@@ -5,7 +5,7 @@
         %p 
           = current_user.name
         .sidebar_header_center-icon
-          = link_to(content_tag(:i, '', class: 'fa fa-edit'), "", method: :get) 
+          = link_to(content_tag(:i, '', class: 'fa fa-edit'), new_group_path, method: :get) 
           = link_to(content_tag(:i, '', class: 'fa fa-cog'), "", method: :get) 
     .sidebar_main
       .sidebar_main_center
