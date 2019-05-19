@@ -1,8 +1,10 @@
+@import "config/colors";
 @import "./reset";
 @import "font-awesome";
-@import "./sidebar";
+@import "groups/sidebar";
 @import "./chat";
 @import "./user";
-@import "config/colors";
 @import "modules/flash";
 @import "./group";
+@import "messages/chat";
+@import "messages/sidebar";

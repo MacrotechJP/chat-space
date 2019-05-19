@@ -1,0 +1,62 @@
+// .sidebar{
+//   width:300px;
+//   height:100vh;
+//   float:left;
+//   margin-bottom: 0;
+
+//   &_header{
+//     height:100px;
+//     background-color: #253141;
+
+//     &_center{
+//       height:100%;
+//       margin:0 20px;
+
+//       p{
+//         float:left;
+//         font-size:16px;
+//         color:#FFFFFF;
+//         font-weight: bold;
+//         margin:42px 0;
+//       }
+
+//       &-icon{
+//         float:right;
+//         margin:42px 0;
+
+//         i{
+//           color:white;
+//         }
+//       }
+
+//     }
+//   }
+//   &_main{
+//     height:calc(100% - 100px);
+//     background-color: #2f3e51;
+
+//     &_center{
+//       height:100%;
+//       margin:0 20px;
+//       padding-top:20px;
+
+//       &-group{
+        
+//         &-name{
+//           font-size:15px;
+//           color:#FFFFFF;
+//           font-weight: bold;
+//           margin-top:0;
+//           margin-bottom:5px;
+//         }
+//         &-message{
+//           font-size:11px;
+//           color:#FFFFFF;
+//           font-weight: bold;
+//           margin-top:0px;
+//           margin-bottom:40px;
+//         }
+//       }
+//     }
+//   }
+// }
