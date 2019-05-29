@@ -72,6 +72,7 @@
     box-sizing: border-box;
     height: 90px;
     padding: 20px 50px 20px 40px;
+    z-index:10;
     &__message {
       border: none;
       float: left;
