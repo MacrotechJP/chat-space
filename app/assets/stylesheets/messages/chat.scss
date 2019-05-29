@@ -49,11 +49,17 @@
   &_main{
     height:calc(100% - 190px);
     background-color: #fafafa;
+    
 
     &_center{
       height:calc(100% - 46px);
-      padding:0 40px;
-      padding-top:46px;
+      width:100%;
+      margin:0;
+      overflow:scroll;
+      padding:10px 40px;
+      padding-top:0;
+      
+      
 
       &-message{
 
