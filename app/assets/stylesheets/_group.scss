@@ -60,6 +60,10 @@
       float: right;
       width: 70%;
     }
+    &--rights {
+      float: right;
+      width: 70%;
+    }
   }
 
   .chat-group-user {
@@ -81,6 +85,7 @@
       float: right;
       display: inline-block;
       cursor: pointer;
+      margin-top:14px;
 
       &--add {
         color: #38aef0;
