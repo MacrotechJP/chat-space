@@ -50,7 +50,6 @@ $(function(){
   });
 
   $(document).on("click",".user_search_add",function(){
-    console.log(this);
     var user_id = $(this).attr("data-user-id");
     var user_name = $(this).attr("data-user-name");
     $(this).parent().remove();
@@ -58,7 +57,6 @@ $(function(){
   });
 
   $(document).on("click",".user-search-remove",function(){
-    console.log(this);
     $(this).parent().remove();
   });
 });
