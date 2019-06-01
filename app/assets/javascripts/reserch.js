@@ -27,7 +27,6 @@ $(function(){
 
   $("#user-search-field").on("keyup",function(){
     var input = $("#user-search-field").val();
-    //console.log(input);
 
     $.ajax({
       type: 'GET',
@@ -50,8 +49,8 @@ $(function(){
   });
 
   $(document).on("click",".user_search_add",function(){
-    var user_id = $(this).attr("data-user-id");
-    var user_name = $(this).attr("data-user-name");
+    var user_id = $(this).data('user-id');
+    var user_name = $(this).data('user-name');
     $(this).parent().remove();
     appendMembers(user_id,user_name);
   });
