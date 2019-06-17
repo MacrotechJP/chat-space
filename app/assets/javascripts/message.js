@@ -108,7 +108,7 @@ $(function(){
       }, 1050);
     })
     .fail(function() {
-      console.log('error');
+      alert('自動更新が失敗しました！');
     });
   };
 
