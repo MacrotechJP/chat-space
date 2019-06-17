@@ -44,7 +44,7 @@ $(function(){
       chat_main.append(html)
       $('.form__message').val('')
       chat_main.animate({
-        scrollTop: 1000
+        scrollTop: 10000
     }, 1050);
       $.rails.enableFormElements($form)
     })
@@ -54,41 +54,6 @@ $(function(){
     })
   })
 
-
-  var buildMessageHTML = function(message) {
-    var message_cummon = '<div class="chat_main_center-message" data-id=' + message.id + ' data-class='+message.group+'>' +
-                          '<div class="chat_main_center-message-top">' +
-                            '<div class="chat_main_center-message-top-user">' +
-                              message.user_name +
-                            '</div>' +
-                            '<div class="chat_main_center-message-top-date">' +
-                              message.created_at +
-                            '</div>' +
-                          '</div>' +
-                          '<div class="chat_main_center-message-detail ">'
-    if (message.content && message.image.url) {
-      var html = message_cummon +
-                    '<p class="lower-message__content">' +
-                      message.content +
-                    '</p>' +
-                    '<img src="' + message.image.url + '" class="lower-message__image" >' +
-                  '</div>' +
-                '</div>'
-    } else if (message.content) {
-      var html = message_cummon +
-                    '<p class="lower-message__content">' +
-                      message.content +
-                    '</p>' +
-                  '</div>' +
-                '</div>'
-    } else if (message.image.url) {
-      var html = message_cummon +
-                    '<img src="' + message.image.url + '" class="lower-message__image" >' +
-                  '</div>' +
-                '</div>'
-    };
-    return html;
-  };
   var reloadMessages = function() {
     last_message_id = $('.chat_main_center-message:last').data('id');
     last_group_id = $('.chat_main_center-message:last').data('class');
@@ -100,7 +65,7 @@ $(function(){
     })
     .done(function(data) {
       $.each(data, function(i, message) {
-        var html = buildMessageHTML(message);
+        var html = buildHTML(message);
         chat_main.append(html);
       });
       chat_main.animate({
