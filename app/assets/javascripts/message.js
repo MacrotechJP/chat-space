@@ -1,4 +1,6 @@
 $(function(){
+  var chat_main = $('.chat_main_center');
+
   $form = $($.rails.formSubmitSelector)
   function buildHTML(message){
     var img = ""
@@ -39,10 +41,10 @@ $(function(){
     })
     .done(function(data){
       var html = buildHTML(data);
-      $('.chat_main_center').append(html)
+      chat_main.append(html)
       $('.form__message').val('')
-      $('.chat_main_center').animate({
-        scrollTop: 1000
+      chat_main.animate({
+        scrollTop: 10000
     }, 1050);
       $.rails.enableFormElements($form)
     })
@@ -51,4 +53,29 @@ $(function(){
       alert('error');
     })
   })
+
+  var reloadMessages = function() {
+    last_message_id = $('.chat_main_center-message:last').data('id');
+    last_group_id = $('.chat_main_center-message:last').data('class');
+    $.ajax({
+      url: "/groups/last_group_id/api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id,class: last_group_id}
+    })
+    .done(function(data) {
+      $.each(data, function(i, message) {
+        var html = buildHTML(message);
+        chat_main.append(html);
+      });
+      chat_main.animate({
+        scrollTop: 10000
+      }, 1050);
+    })
+    .fail(function() {
+      alert('自動更新が失敗しました！');
+    });
+  };
+
+  setInterval(reloadMessages, 5000);
 });
