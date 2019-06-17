@@ -56,17 +56,18 @@ $(function(){
 
 
   var buildMessageHTML = function(message) {
+    var message_cummon = '<div class="chat_main_center-message" data-id=' + message.id + ' data-class='+message.group+'>' +
+                          '<div class="chat_main_center-message-top">' +
+                            '<div class="chat_main_center-message-top-user">' +
+                              message.user_name +
+                            '</div>' +
+                            '<div class="chat_main_center-message-top-date">' +
+                              message.created_at +
+                            '</div>' +
+                          '</div>' +
+                          '<div class="chat_main_center-message-detail ">'
     if (message.content && message.image.url) {
-      var html = '<div class="chat_main_center-message" data-id=' + message.id + ' data-class='+message.group+'>' +
-                  '<div class="chat_main_center-message-top">' +
-                    '<div class="chat_main_center-message-top-user">' +
-                      message.user_name +
-                    '</div>' +
-                    '<div class="chat_main_center-message-top-date">' +
-                      message.created_at +
-                    '</div>' +
-                  '</div>' +
-                  '<div class="chat_main_center-message-detail ">' +
+      var html = message_cummon +
                     '<p class="lower-message__content">' +
                       message.content +
                     '</p>' +
@@ -74,32 +75,14 @@ $(function(){
                   '</div>' +
                 '</div>'
     } else if (message.content) {
-      var html = '<div class="chat_main_center-message" data-id=' + message.id + ' data-class='+message.group+'>' +
-                  '<div class="chat_main_center-message-top">' +
-                    '<div class="chat_main_center-message-top-user">' +
-                      message.user_name +
-                    '</div>' +
-                    '<div class="chat_main_center-message-top-date">' +
-                      message.created_at +
-                    '</div>' +
-                  '</div>' +
-                  '<div class="chat_main_center-message-detail ">' +
+      var html = message_cummon +
                     '<p class="lower-message__content">' +
                       message.content +
                     '</p>' +
                   '</div>' +
                 '</div>'
     } else if (message.image.url) {
-      var html = '<div class="chat_main_center-message" data-id=' + message.id + ' data-class='+message.group+'>' +
-                  '<div class="chat_main_center-message-top">' +
-                    '<div class="chat_main_center-message-top-user">' +
-                      message.user_name +
-                    '</div>' +
-                    '<div class="chat_main_center-message-top-date">' +
-                      message.created_at +
-                    '</div>' +
-                  '</div>' +
-                  '<div class="chat_main_center-message-detail ">' +
+      var html = message_cummon +
                     '<img src="' + message.image.url + '" class="lower-message__image" >' +
                   '</div>' +
                 '</div>'
@@ -113,7 +96,7 @@ $(function(){
       url: "/groups/last_group_id/api/messages",
       type: 'get',
       dataType: 'json',
-      data: {id: last_message_id}
+      data: {id: last_message_id,class: last_group_id}
     })
     .done(function(data) {
       $.each(data, function(i, message) {
@@ -121,7 +104,7 @@ $(function(){
         chat_main.append(html);
       });
       chat_main.animate({
-        scrollTop: 1000
+        scrollTop: 10000
       }, 1050);
     })
     .fail(function() {
