@@ -6,7 +6,10 @@
         .chat_top_center-info
           .chat_top_center-info-name 
             = @group.name
-          .chat_top_center-info-member Members : koyo
+          .chat_top_center-info-member 
+            Members:
+            - @group.users.each do |user|
+              = user.name
         .chat_top_center-edit
           = link_to 'Edit',"/users/sign_out",method: :delete,class: "chat_top_center-edit-boton"
     .chat_main
