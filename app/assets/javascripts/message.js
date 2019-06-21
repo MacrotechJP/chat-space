@@ -77,5 +77,7 @@ $(function(){
     });
   };
 
-  setInterval(reloadMessages, 5000);
+  if (window.location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 5000);
+  }
 });
