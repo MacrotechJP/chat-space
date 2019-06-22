@@ -14,6 +14,15 @@ $(function(){
 
     search_list.append(html);  
   } 
+  function appendErr() {
+    var html = `<div class="chat-group-user clearfix js-chat-user">
+                  <p class="chat-group-user__name">
+                  一致するユーザーが見つかりませんでした。
+                  </p>
+                </div>`
+
+    search_list.append(html);  
+  } 
   
   function appendMembers(id,name) {
     var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
@@ -40,6 +49,8 @@ $(function(){
           users.forEach(function(user){
             appendUsers(user);
           });
+        }else{
+          appendErr();
         }
       })
       .fail(function() {
