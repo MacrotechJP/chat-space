@@ -11,7 +11,9 @@
             - @group.users.each do |user|
               = user.name
         .chat_top_center-edit
-          = link_to 'Edit',"/groups/update",method: :delete,class: "chat_top_center-edit-boton"
+          = link_to edit_group_path(@group.id) do
+          .chat_top_center-edit-boton
+            Edit
     .chat_main
       .chat_main_center
         = render partial: "message",collection: @messages
