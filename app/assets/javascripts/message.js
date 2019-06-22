@@ -40,16 +40,18 @@ $(function(){
       contentType: false
     })
     .done(function(data){
+      $(".form__submit").prop('disabled',false);
       var html = buildHTML(data);
       chat_main.append(html)
-      $('.form__message').val('')
-      chat_main.animate({
-        scrollTop: 10000
-    }, 1050);
+      $("#new_message")[0].reset();
+      $('.chat_main_center').animate({
+        scrollTop: $('.chat_main_center')[0].scrollHeight
+    }, 50);
       $.rails.enableFormElements($form)
     })
     
     .fail(function(){
+      $(".form__submit").prop('disabled',false);
       alert('error');
     })
   })
