@@ -1,6 +1,13 @@
 # config valid for current version and patch releases of Capistrano
 lock "3.11.0"
 
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
+  AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"]
+}
+
 set :application, 'chat-space'
 set :repo_url,  'git@github.com:tanakakoyo1999/chat-space.git'
 
