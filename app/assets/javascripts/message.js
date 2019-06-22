@@ -67,10 +67,11 @@ $(function(){
       $.each(data, function(i, message) {
         var html = buildHTML(message);
         chat_main.append(html);
+        chat_main.animate({
+          scrollTop: 10000
+        }, 1050);
       });
-      chat_main.animate({
-        scrollTop: 10000
-      }, 1050);
+      
     })
     .fail(function() {
       alert('自動更新が失敗しました！');

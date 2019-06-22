@@ -27,25 +27,27 @@ $(function(){
 
   $("#user-search-field").on("keyup",function(){
     var input = $("#user-search-field").val();
-
-    $.ajax({
-      type: 'GET',
-      url: '/users',
-      data: { keyword: input },
-      dataType: 'json',
-    })
-    .done(function(users) {
+    if(input != ""){ 
+      $.ajax({
+        type: 'GET',
+        url: '/users',
+        data: { keyword: input },
+        dataType: 'json',
+      })
+      .done(function(users) {
+        search_list.empty();
+        if (users.length !== 0) {
+          users.forEach(function(user){
+            appendUsers(user);
+          });
+        }
+      })
+      .fail(function() {
+        alert('ユーザー検索に失敗しました');
+      });
+    }else{
       search_list.empty();
-      if (users.length !== 0) {
-        users.forEach(function(user){
-          appendUsers(user);
-        });
-      }
-    })
-    .fail(function() {
-      alert('ユーザー検索に失敗しました');
-     });
-    
+    }
   });
 
   $(document).on("click",".user_search_add",function(){
