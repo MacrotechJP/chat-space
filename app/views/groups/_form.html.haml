@@ -28,12 +28,12 @@
         %input{name:'group[user_ids][]', type:'hidden', value:"#{current_user.id}"}
         %p.chat-group-user__name 
           #{current_user.name}  
-      - group.group_users.each do |user|
-        - if user.user.name != current_user.name
+      - group.users.each do |user|
+        - if user.name != current_user.name
           .chat-group-user.clearfix.js-chat-member#chat-group-user-8
             %input{name:'group[user_ids][]', type:'hidden', value:"#{user.id}"}
             %p.chat-group-user__name 
-              = user.user.name
+              = user.name
             .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
                 
   .chat-group-form__field.clearfix
